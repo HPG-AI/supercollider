@@ -73,6 +73,9 @@ deploy:
    skip_cleanup: true
    endpoint: s3-us-west-2.amazonaws.com
    acl: public_read
+   edge:
+     source: 'native-api/dpl'
+     branch: 'silence_s3_warnings'
    on:
      condition: $TRAVIS_OS_NAME = osx && ! -z $AWS_KEY && ! -z $AWS_SECRET
      all_branches: true
